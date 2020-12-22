@@ -38,8 +38,15 @@ const Example7 = () => {
 
 	return (
 		<div>
-			<input onChange={(e) => setInput(e.target.value)} value={input} />
-			<button onClick={runWorker}>Run Worker</button>
+			<input
+				onChange={(e) => {
+					setInput(e.target.value);
+					setResult(null);
+					setTime(null);
+				}}
+				value={input}
+			/>
+			<button onClick={runWorker}>Run on Worker</button>
 			<button onClick={runThread}>Run on Main Thread</button>
 			<h1>Result</h1>
 			{result && (

@@ -27,14 +27,11 @@ const Example2 = () => {
 	const [target, setTarget] = React.useState(2);
 	const [name, setName] = React.useState('');
 
-	const checkTargetReached = React.useCallback(
-		(current) => {
-			if (current === target) {
-				alert('Target reached');
-			}
-		},
-		[target]
-	);
+	const checkTargetReached = (current) => {
+		if (current === target) {
+			alert('Target reached');
+		}
+	};
 
 	React.useEffect(() => {
 		document.title = 'Example 2';

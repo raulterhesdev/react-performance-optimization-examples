@@ -38,6 +38,9 @@ const Example1 = () => {
 			<input value={text} onChange={(e) => setText(e.target.value)} />
 			<div className='lists-container'>
 				<List />
+				<List />
+				<List />
+				<List />
 			</div>
 		</div>
 	);
