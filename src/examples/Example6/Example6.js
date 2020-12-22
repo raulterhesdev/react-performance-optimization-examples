@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Example6 = () => {
+	React.useEffect(() => {
+		document.title = 'Example 6';
+	}, []);
+
 	return (
 		<div>
 			<p>Example 6</p>

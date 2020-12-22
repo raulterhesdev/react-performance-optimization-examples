@@ -6,6 +6,7 @@ const List = () => {
 		listItems.push(
 			<li
 				key={i}
+				// Set a random bg-color everytime a list item renders
 				style={{
 					backgroundColor: `rgb(${Math.floor(
 						Math.random() * 255
@@ -27,10 +28,15 @@ const List = () => {
 
 const Example1 = () => {
 	const [text, setText] = React.useState('');
+
+	React.useEffect(() => {
+		document.title = 'Example 1';
+	}, []);
+
 	return (
 		<div>
 			<input value={text} onChange={(e) => setText(e.target.value)} />
-			<div style={{ display: 'flex' }}>
+			<div className='lists-container'>
 				<List />
 			</div>
 		</div>

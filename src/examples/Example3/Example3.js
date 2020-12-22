@@ -27,6 +27,10 @@ const Example3 = () => {
 		return { inc };
 	}, [inc]);
 
+	React.useEffect(() => {
+		document.title = 'Example 3';
+	}, []);
+
 	return (
 		<div>
 			<label htmlFor='name'>Your Name:</label>

@@ -36,6 +36,10 @@ const Example2 = () => {
 		[target]
 	);
 
+	React.useEffect(() => {
+		document.title = 'Example 2';
+	}, []);
+
 	return (
 		<div>
 			<label htmlFor='name'>Your Name:</label>

@@ -4,6 +4,10 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Example5 = () => {
 	const items = [];
 
+	React.useEffect(() => {
+		document.title = 'Example 5';
+	}, []);
+
 	for (let i = 1; i <= 100; i++) {
 		items.push(
 			<img

@@ -61,6 +61,11 @@ const List = () => {
 
 const Example4 = () => {
 	const [text, setText] = React.useState('');
+
+	React.useEffect(() => {
+		document.title = 'Example 4';
+	}, []);
+
 	return (
 		<div>
 			<input value={text} onChange={(e) => setText(e.target.value)} />
