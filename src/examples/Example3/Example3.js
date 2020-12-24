@@ -23,7 +23,7 @@ const Example3 = () => {
 	const [inc, setInc] = React.useState(2);
 	const [name, setName] = React.useState('');
 
-	const params = { inc: inc };
+	const params = React.useMemo(() => ({ inc: inc }), [inc]);
 
 	React.useEffect(() => {
 		document.title = 'Example 3';

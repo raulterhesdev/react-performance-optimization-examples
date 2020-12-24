@@ -1,6 +1,6 @@
 import React from 'react';
 
-const List = () => {
+const List = React.memo(() => {
 	const listItems = [];
 	for (let i = 0; i <= 2000; i++) {
 		listItems.push(
@@ -24,7 +24,7 @@ const List = () => {
 			<ul>{listItems}</ul>
 		</div>
 	);
-};
+});
 
 const Example1 = () => {
 	const [text, setText] = React.useState('');

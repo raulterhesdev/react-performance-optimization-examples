@@ -8,7 +8,7 @@ import Example4 from './examples/Example4/Example4';
 import Example5 from './examples/Example5/Example5';
 import Example6 from './examples/Example6/Example6';
 import Example7 from './examples/Example7/Example7';
-import DummyCode from './examples/Example6/DummyCode/App';
+// import DummyCode from './examples/Example6/DummyCode/App';
 
 const Navigation = () => {
 	return (
@@ -25,23 +25,26 @@ const Navigation = () => {
 };
 
 function App() {
+	const DummyCode = lazy(() => import('./examples/Example6/DummyCode/App'));
 	return (
 		<div className='App'>
 			<div className='link-container'>
 				<Link to='/'>Go back</Link>
 			</div>
-			<Switch>
-				<Route path='/example1' component={Example1} />
-				<Route path='/example2' component={Example2} />
-				<Route path='/example3' component={Example3} />
-				<Route path='/example4' component={Example4} />
-				<Route path='/example5' component={Example5} />
-				<Route path='/example6' component={Example6} exact />
-				<Route path='/example7' component={Example7} />
-				<Route path='/example6/dummy' component={DummyCode} />
-				<Route path='/' component={Navigation} exact />
-				<Redirect to='/' />
-			</Switch>
+			<Suspense fallback={<div>Loading...</div>}>
+				<Switch>
+					<Route path='/example1' component={Example1} />
+					<Route path='/example2' component={Example2} />
+					<Route path='/example3' component={Example3} />
+					<Route path='/example4' component={Example4} />
+					<Route path='/example5' component={Example5} />
+					<Route path='/example6' component={Example6} exact />
+					<Route path='/example7' component={Example7} />
+					<Route path='/example6/dummy' component={DummyCode} />
+					<Route path='/' component={Navigation} exact />
+					<Redirect to='/' />
+				</Switch>
+			</Suspense>
 		</div>
 	);
 }

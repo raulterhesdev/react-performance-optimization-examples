@@ -10,15 +10,15 @@ const Example5 = () => {
 
 	for (let i = 1; i <= 100; i++) {
 		items.push(
-			<img
+			<LazyLoadImage
 				key={i.toString()}
 				src={`https://placedog.net/600/400/id=${i}`}
 				alt=''
-				// threshold={200}
-				// visibleByDefault={false}
+				threshold={200}
+				visibleByDefault={false}
 				height={400}
 				width={600}
-			></img>
+			></LazyLoadImage>
 		);
 	}
 	return <div>{items}</div>;

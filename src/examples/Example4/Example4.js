@@ -36,9 +36,9 @@ const List = () => {
 	);
 
 	const listItems = list.map((el, index) => {
-		const elKey = Math.random();
+		// const elKey = Math.random();
 		// const elKey = index;
-		// const elKey = el.id;
+		const elKey = el.id;
 		return (
 			<ListItem
 				color={el.color}
